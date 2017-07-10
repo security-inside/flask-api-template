@@ -21,8 +21,8 @@ Production mode:
 ### Instructions for use
 The following headers are common to all API services.
  - Authorization (mandatory):
-   - Basic auth for /login service ("Basic base64(<user>:<pass>)")
-   - Obtained JWT for all other services ("Bearer <token>")
+   - Basic auth for /login service ("Basic base64(user:pass)")
+   - Obtained JWT for all other services ("Bearer jwt_token")
 
 The following response codes can be returned by any of the API services.
 
