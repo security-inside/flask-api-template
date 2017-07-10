@@ -1,0 +1,99 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Flask API Template",
+		"_postman_id": "c9359749-b094-68ae-b39b-9d737f2be2b6",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/v1/",
+			"request": {
+				"url": "{{SECURITY_URL}}/v1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/404",
+			"request": {
+				"url": "{{SECURITY_URL}}/v1/404",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/ping",
+			"request": {
+				"url": "{{SECURITY_URL}}/v1/ping",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable(\"API_TOKEN\", jsonData.token);\r",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{SECURITY_URL}}/v1/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic c2VjdXJpdHk6aW5zaWRl",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/profile",
+			"request": {
+				"url": "{{SECURITY_URL}}/v1/profile",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{API_TOKEN}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
