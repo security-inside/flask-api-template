@@ -191,21 +191,4 @@ def ret_content_type(response, type, code):
     if (type == 'html'):
         return response, code, {'Server': 'Always look on the bright side of life', 'Need-help': 'info@securityinside.info', 'Strict-Transport-Security': 'max-age=31536000', 'Cache-control': 'no-store', 'Pragma': 'no-cache', 'X-XSS-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'deny'}
 
-    """
-    headers = {'Need-help': '<enter_here_your_contact_mail>', 
-                'Strict-Transport-Security': 'max-age=31536000', 
-                'Cache-control': 'no-store', 
-                'Pragma': 'no-cache', 
-                'X-XSS-Protection:': '1; mode=block', 
-                'X-Content-Type-Options': 'nosniff', 
-                'X-Frame-Options': 'deny'}
-
-    print headers
-
-    if (type == 'json'):
-        del response['code']        
-        headers['Content-Type'] = 'application/json'
-        
-    return response, code, headers
-    """
 ##########################################################################################        
